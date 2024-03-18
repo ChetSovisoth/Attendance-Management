@@ -1,24 +1,13 @@
 @extends('layout.layout')
 
 @section('content')
-    <div class="d-flex">
-        <div class="w-75">
-            @include('create_employee')
-        </div>
-        <div class="w-25">
-            @include('search-bar')
+    <div class="d-flex flex-1 justify-content-end">
+        <div class="w-25 ">
+            @include('shared.search-bar')
         </div>
     </div>
     <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Emp. Name</th>
-                <th scope="col">Emp. Email</th>
-                <th scope="col">Emp. Password</th>
-                <th scope="col">Actions</th> <!-- New column for actions -->
-            </tr>
-        </thead>
+        @include('shared.dashboard-header')
         <tbody class="align-middle">
             @foreach ($employees as $employee)
                 <tr>
@@ -29,8 +18,9 @@
                     <td>
                         <div class="d-flex">
                             <!--Edit-->
-                            @include('edit_employee')
-                            @include('delete_employee')
+                            @include('employee.edit_employee')
+                            @include('employee.delete_employee')
+                            
                         </div>
                     </td>
                 </tr>

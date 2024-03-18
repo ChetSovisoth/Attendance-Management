@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\CrudController;
+use App\Http\Controllers\EmployeeCrudController;
 use App\Http\Controllers\EmployeeController;
-use App\Models\Employee;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,12 +17,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get("/", [EmployeeController::class, 'index'])->name("dashboard");
 
-Route::post("/crud", [CrudController::class, 'store'])->name("crud.store");
+Route::post("/employee", [EmployeeCrudController::class, 'store'])->name("employee.store");
 
-Route::delete("/crud/{employee}", [CrudController::class, 'destroy'])->name("crud.destroy");
+Route::delete("/employee/{employee}", [EmployeeCrudController::class, 'destroy'])->name("employee.destroy");
 
-Route::get("/crud/{employee}/edit", [CrudController::class, 'edit'])->name("crud.edit");
+Route::get("/employee/{employee}/edit", [EmployeeCrudController::class, 'edit'])->name("employee.edit");
 
-Route::get("/crud/{employee}", [CrudController::class, 'show'])->name("crud.show");
+Route::get("/employee/{employee}", [EmployeeCrudController::class, 'show'])->name("employee.show");
 
-Route::put("/crud/{employee}", [CrudController::class, 'update'])->name("crud.update");
+Route::put("/employee/{employee}", [EmployeeCrudController::class, 'update'])->name("employee.update");
+
+Route::get("crud", function() {
+    return view("crud.crud-page");
+});
