@@ -20,8 +20,8 @@ class Shift extends Model
         'shift_name',
         'late_policy'
     ];
-    function getShiftTime($id) {
-        return Shift::find($id)->shift_start_time . ' - ' .  Shift::find($id)->shift_end_time;
+    function getShiftTable($id) {
+        return Shift::find($id);
     }
     function getShift($id) {
         return Shift::find($id)->shift_name . ': ' . Shift::find($id)->shift_start_time . ' - ' .  Shift::find($id)->shift_end_time;
