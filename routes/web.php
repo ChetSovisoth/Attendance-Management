@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\EmployeeCrudController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\PositionController;
+use App\Http\Controllers\ShiftController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,8 +27,14 @@ Route::get("/employee/{employee}/edit", [EmployeeCrudController::class, 'edit'])
 
 Route::get("/employee/{employee}", [EmployeeCrudController::class, 'show'])->name("employee.show");
 
-Route::put("/employee/{employee}", [EmployeeCrudController::class, 'update'])->name("employee.update");
+Route::put("/employee/{employee}/update", [EmployeeCrudController::class, 'update'])->name("employee.update");
 
-Route::get("crud", function() {
-    return view("crud.crud-page");
+Route::put("/employee/{employee}/reset", [EmployeeCrudController::class, 'reset'])->name("employee.reset");
+
+Route::post("/shift", [ShiftController::class, 'store'])->name("shift.store");
+
+Route::post("/position", [PositionController::class, 'store'])->name("position.store");
+
+Route::get('/crud', function() {
+    return view('crud.crud');
 });
