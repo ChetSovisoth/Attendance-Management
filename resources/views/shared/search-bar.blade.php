@@ -4,8 +4,8 @@
     </div>
     <div class="card-body">
         <form action="{{ route('dashboard') }}" method="GET">
-            <input placeholder="Search with email..." class="form-control w-100" type="text" name="query">
-            <button class="btn btn-dark mt-2"> Search</button>
+            <input placeholder="Search with email, phone..." class="form-control w-100" type="text" name="query">
+            <button class="btn btn-dark mt-2"> Search </button>
         </form>
     </div>
 </div>

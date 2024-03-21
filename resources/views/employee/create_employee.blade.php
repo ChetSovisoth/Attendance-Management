@@ -19,6 +19,11 @@
             <span class="d-block fs-6 text-danger">{{ $message }}</span>
         @enderror
 
+        <input type="text" placeholder="Others" name="others" class="d-block w-50 mt-3">
+        @error('others')
+            <span class="d-block fs-6 text-danger">{{ $message }}</span>
+        @enderror
+
         <label for="shift" class="d-block w-50 mt-3">Choose a shift:</label>
         <select name="shift" id="shift" class="d-block w-50 mt-3">
             <option>Select a shift</option>

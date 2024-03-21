@@ -14,15 +14,19 @@ class EmployeeController extends Controller
         $employees = Employee::orderBy('created_at', 'desc');
 
         if (request()->has('query')) {
-            $emailQuery = request()->get('query');
+            $query = request()->get('query');
 
-            $employees = $employees->where('email', 'like', '%' . $emailQuery . '%');
+            $employees = $employees->where(function ($queryBuilder) use ($query) {
+                $queryBuilder->
+                where('email', 'like', '%' . $query . '%')->
+                orWhere('phone', 'like', '%' . $query . '%');
+            });
         }
 
         return view('dashboard', [
             'employees' => $employees->paginate(8),
             'shifts' => Shift::orderBy('id')->get(),
-            'positions' => Position::orderBy('id')->get()
+            'positions' => Position::orderBy('id')->get(),
         ]);
     }
 }

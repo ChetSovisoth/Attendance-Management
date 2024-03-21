@@ -20,6 +20,7 @@
                     <td>{{ $employee->email }}</td>
                     <td>{{ (new App\Models\Position)->getPosition($employee->position_id) }}</td>
                     <td>{{ (new App\Models\Shift)->getShift($employee->shift_id) }}</td>
+                    <td>{{ $employee->others }}</td>
                     <td>
                         <div class="d-flex align-items-center ">
                             @include('employee.edit_employee')

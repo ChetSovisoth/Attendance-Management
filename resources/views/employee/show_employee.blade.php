@@ -11,6 +11,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">Position</th>
                 <th scope="col">Shift</th>
+                <th scope="col">Others</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
@@ -82,6 +83,14 @@
                         </td>
 
                         <td>
+                            <input type="text" placeholder="Others" name="others" class="form-control w-75"
+                             value="{{ $employee->others }}">
+                            @error('others')
+                                <span class="d-block fs-6 text-danger">{{ $message }}</span>
+                            @enderror
+                        </td>
+
+                        <td>
                             <button type="submit" class="btn btn-sm btn-success">Update</button>
                         </td>
                     </form>
@@ -92,6 +101,7 @@
                     <td>{{ $employee->email }}</td>
                     <td>{{ (new App\Models\Position())->getPosition($employee->position_id) }}</td>
                     <td>{{ (new App\Models\Shift())->getShift($employee->shift_id) }}</td>
+                    <td>{{ $employee->others }}</td>
                     <td>
                         <div class="d-flex">
                             @include('employee.edit_employee')
@@ -103,22 +113,3 @@
         </tbody>
     </table>
 @endsection
-
-<script>
-    // JavaScript to update form action URL based on selected position and shift
-    document.getElementById('position').addEventListener('change', function() {
-        updateFormAction();
-    });
-
-    document.getElementById('shift').addEventListener('change', function() {
-        updateFormAction();
-    });
-
-    function updateFormAction() {
-        var positionId = document.getElementById('position').value;
-        var shiftId = document.getElementById('shift').value;
-        var formAction = "{{ route('employee.store', ['position' => ':position', 'shift' => ':shift']) }}";
-        formAction = formAction.replace(':position', positionId).replace(':shift', shiftId);
-        document.getElementById('createEmployeeForm').setAttribute('action', formAction);
-    }
-</script>

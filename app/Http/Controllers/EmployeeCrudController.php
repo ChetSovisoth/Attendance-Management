@@ -25,7 +25,8 @@ class EmployeeCrudController extends Controller
             'password' => 'AttendIn2024@!',
             'email' => strtolower($validated['first_name']) . '.' . strtolower($validated['last_name']) . '.' . date('Y') .'@attendin.com',
             'shift_id' => $validated['shift'],
-            'position_id' => $validated['position']
+            'position_id' => $validated['position'],
+            'others' => request()->get('others')
         ]);
         $employee->save();
 
@@ -58,7 +59,7 @@ class EmployeeCrudController extends Controller
             'position' => 'required|exists:positions,id'
         ]);
         
-        $employee->update([$validated, 'position_id' => $validated['position'], 'shift_id' => $validated['shift']]);
+        $employee->update([$validated, 'position_id' => $validated['position'], 'shift_id' => $validated['shift'], 'others' => request()->get('others')]);
     
         return redirect()->route('employee.show', $employee->id)->with('success', 'Employee Updated');
     }

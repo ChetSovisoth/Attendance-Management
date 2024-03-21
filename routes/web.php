@@ -38,3 +38,7 @@ Route::post("/position", [PositionController::class, 'store'])->name("position.s
 Route::get('/crud', function() {
     return view('crud.crud');
 });
+
+Route::get('/home', function() {
+    return view('home');
+});

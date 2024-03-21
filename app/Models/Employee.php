@@ -21,7 +21,8 @@ class Employee extends Model
         'email',
         'password',
         'shift_id',
-        'position_id'
+        'position_id',
+        'others'
     ];
 
 }

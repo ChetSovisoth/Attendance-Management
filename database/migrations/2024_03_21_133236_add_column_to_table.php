@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('shifts', function (Blueprint $table) {
-            $table->id();
-            $table->string('shift_name');
-            $table->string('shift_time');
-            $table->integer('late_policy');
-            $table->timestamps();
+        Schema::table('employees', function (Blueprint $table) {
+            $table->string('others')->nullable();
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('shifts');
+        Schema::table('employees', function (Blueprint $table) {
+            $table->dropColumn('others');
+        });
     }
 };
