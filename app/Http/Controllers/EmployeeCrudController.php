@@ -30,12 +30,12 @@ class EmployeeCrudController extends Controller
         ]);
         $employee->save();
 
-        return redirect()->route('dashboard')->with('success','Employee Created!');
+        return redirect()->back()->with('success','Employee Created!');
     }
     public function destroy(Employee $employee) {
         $employee->delete();
 
-        return redirect()->route('dashboard')->with('danger','Employee Deleted!');
+        return redirect()->back()->with('danger','Employee Deleted!');
     }
 
     public function show(Employee $employee) {
@@ -69,7 +69,7 @@ class EmployeeCrudController extends Controller
             'password' => 'AttendIn2024@!'
         ]);
 
-        return redirect()->route('employee.show', $employee->id)->with('success', 'Employee Password Reseted');
+        return redirect()->route('employee.show', $employee->id)->with('success', 'Employee Password Reset');
     }
 
 }

@@ -24,5 +24,7 @@ class Employee extends Model
         'position_id',
         'others'
     ];
-
+    function getTotalEmployee() {
+        return Employee::count();
+    }
 }

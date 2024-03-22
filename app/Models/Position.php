@@ -17,4 +17,12 @@ class Position extends Model
     function getPosition($id) {
         return Position::find($id)->position_title;
     }
+
+    function getTotalPosition() {
+        return Position::count();
+    }
+
+    function getPositionTable() {
+        return Position::all();
+    }
 }

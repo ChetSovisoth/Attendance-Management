@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/", [EmployeeController::class, 'index'])->name("dashboard");
+//Employee's route
+Route::get("/employees", [EmployeeController::class, 'index'])->name("employee.crud");
 
 Route::post("/employee", [EmployeeCrudController::class, 'store'])->name("employee.store");
 
@@ -31,14 +32,39 @@ Route::put("/employee/{employee}/update", [EmployeeCrudController::class, 'updat
 
 Route::put("/employee/{employee}/reset", [EmployeeCrudController::class, 'reset'])->name("employee.reset");
 
+//Shift's route
+Route::get('/shifts', function() {
+    return view('shift.crud_shift');
+});
+
 Route::post("/shift", [ShiftController::class, 'store'])->name("shift.store");
+
+Route::delete("/shift/{shift}", [ShiftController::class, 'destroy'])->name("shift.destroy");
+
+Route::get("/shift/{shift}/edit", [ShiftController::class, 'edit'])->name("shift.edit");
+
+Route::get("/shift/{shift}", [ShiftController::class, 'show'])->name("shift.show");
+
+Route::put("/shift/{shift}", [ShiftController::class, 'update'])->name("shift.update");
+
+//Position's route
+Route::get('/positions', function() {
+    return view('position.crud_position');
+});
 
 Route::post("/position", [PositionController::class, 'store'])->name("position.store");
 
-Route::get('/crud', function() {
-    return view('crud.crud');
+Route::delete("/position/{position}", [PositionController::class, 'destroy'])->name("position.destroy");
+
+Route::get("/position/{position}/edit", [PositionController::class, 'edit'])->name("position.edit");
+
+Route::get("/position/{position}", [PositionController::class, 'show'])->name("position.show");
+
+Route::put("/position/{position}", [PositionController::class, 'update'])->name("position.update");
+
+
+//Dashboard
+Route::get('/', function() {
+    return view('dashboard');
 });
 
-Route::get('/home', function() {
-    return view('home');
-});

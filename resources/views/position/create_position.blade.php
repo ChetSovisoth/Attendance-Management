@@ -1,6 +1,6 @@
 <form action="{{ route("position.store") }}" method="POST">
     @csrf
-    <input type="text" name="position_title" placeholder="Position" class="d-block w-50 my-3 ">
+    <input type="text" name="position_title" placeholder="Position Title" class="d-block w-50 my-3 ">
     @error('position_title')
         <p>{{ $message }}</p>
     @enderror
