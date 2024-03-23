@@ -10,7 +10,7 @@
                 <th scope="col" class="text-center">Actions</th>
         </thead>
         <tbody class="align-middle">
-            @foreach ((new App\Models\Position())->getPositionTable() as $position)
+            @foreach ((new App\Models\Position())->paginate(10) as $position)
                 <tr class="text-center">
                     <th scope="row">{{ $position->id }}</th>
                     <td scope="row">{{ $position->position_title }}</td>
@@ -24,4 +24,5 @@
             @endforeach
         </tbody>
     </table>
+    {{ (new App\Models\Position())->paginate(10)->links() }} 
 @endsection

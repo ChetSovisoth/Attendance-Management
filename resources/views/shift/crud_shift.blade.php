@@ -13,7 +13,7 @@
                 <th scope="col" class="text-center">Actions</th>
         </thead>
         <tbody class="align-middle">
-            @foreach ((new App\Models\Shift())->getShiftTable() as $shift)
+            @foreach ((new App\Models\Shift())->paginate(10) as $shift)
                 <tr class="text-center">
                     <th scope="row">{{ $shift->id }}</th>
                     <td scope="row">{{ $shift->shift_name }}</td>
@@ -30,4 +30,5 @@
             @endforeach
         </tbody>
     </table>
+    {{ (new App\Models\Shift())->paginate(10) -> links() }}
 @endsection

@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 //Employee's route
 Route::get("/employees", [EmployeeController::class, 'index'])->name("employee.crud");
 
+Route::get('/employees/filter', [EmployeeController::class, 'filterEmployees'])->name('employee.filter');
+
 Route::post("/employee", [EmployeeCrudController::class, 'store'])->name("employee.store");
 
 Route::delete("/employee/{employee}", [EmployeeCrudController::class, 'destroy'])->name("employee.destroy");
@@ -31,6 +33,10 @@ Route::get("/employee/{employee}", [EmployeeCrudController::class, 'show'])->nam
 Route::put("/employee/{employee}/update", [EmployeeCrudController::class, 'update'])->name("employee.update");
 
 Route::put("/employee/{employee}/reset", [EmployeeCrudController::class, 'reset'])->name("employee.reset");
+
+Route::get("/display/employees", function() {
+    return view('employee.display_employee');
+});
 
 //Shift's route
 Route::get('/shifts', function() {

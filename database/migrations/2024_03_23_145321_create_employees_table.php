@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('phone')->unique();
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('others')->nullable();
             $table->foreignId('shift_id')->constrained();
             $table->foreignId('position_id')->constrained();
             $table->timestamps();

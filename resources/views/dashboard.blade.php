@@ -20,7 +20,7 @@
                     <div class="row mb-3">
                         <!-- Employee Card -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <a href="" type="button" class="w-100 text-decoration-none ">
+                            <a href="/display/employees" type="button" class="w-100 text-decoration-none ">
                                 <div class="card h-100">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
