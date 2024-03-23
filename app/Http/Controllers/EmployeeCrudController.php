@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Employee;
 use App\Models\Position;
 use App\Models\Shift;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class EmployeeCrudController extends Controller
@@ -22,7 +23,7 @@ class EmployeeCrudController extends Controller
             'first_name' => ucfirst($validated['first_name']),
             'last_name' => ucfirst($validated['last_name']),
             'phone' => $validated['phone'],
-            'password' => 'AttendIn2024@!',
+            'password' => Hash::make('AttendIn2024@!'),
             'email' => strtolower($validated['first_name']) . '.' . strtolower($validated['last_name']) . '.' . date('Y') .'@attendin.com',
             'shift_id' => $validated['shift'],
             'position_id' => $validated['position'],
@@ -66,7 +67,7 @@ class EmployeeCrudController extends Controller
     
     public function reset(Employee $employee) {
         $employee->update([
-            'password' => 'AttendIn2024@!'
+            'password' => Hash::make('AttendIn2024@!')
         ]);
 
         return redirect()->route('employee.show', $employee->id)->with('success', 'Employee Password Reset');
