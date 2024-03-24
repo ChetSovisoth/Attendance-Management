@@ -16,7 +16,7 @@
             <tr class="text-center">
                 <th scope="row">{{ $shift->id }}</th>
                 @if ($editting ?? false)
-                    <form action="{{ route('shift.update', $shift->id) }}" method="POST">
+                    <form action="{{ route('shifts.update', $shift->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <td class="align-middle">

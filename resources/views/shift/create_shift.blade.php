@@ -1,4 +1,4 @@
-<form action="{{ route('shift.store') }}" method="POST">
+<form action="{{ route('shifts.store') }}" method="POST">
     @csrf
     <div class="mb-3">
         <input type="text" placeholder="Shift Name" name="shift_name" class="d-block w-75 mt-3 ">

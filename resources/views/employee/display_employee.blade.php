@@ -58,12 +58,11 @@
                     <td scope="row">{{ $employee->others }}</td>
                 </tr>
             @endforeach
-        </tbody>
-        
-        @isset($employees)
-            {{ $employees->links() }}
-        @else
-            {{ $employeesToDisplay->links() }}
-        @endisset
+        </tbody>    
     </table>
+    @isset($employees)
+        {{ $employees->links() }}
+    @else
+        {{ $employeesToDisplay->links() }}
+    @endisset
 @endsection

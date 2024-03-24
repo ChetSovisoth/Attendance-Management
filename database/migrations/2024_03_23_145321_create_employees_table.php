@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('others')->nullable();
-            $table->foreignId('shift_id')->constrained();
-            $table->foreignId('position_id')->constrained();
+            $table->foreignId('shift_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('position_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

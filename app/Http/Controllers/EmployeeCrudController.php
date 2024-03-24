@@ -72,5 +72,7 @@ class EmployeeCrudController extends Controller
 
         return redirect()->route('employee.show', $employee->id)->with('success', 'Employee Password Reset');
     }
-
 }
+
+// use Illuminate\Support\Facades\Hash;
+// Hash::check($userInputPassword, $hashedPassword)

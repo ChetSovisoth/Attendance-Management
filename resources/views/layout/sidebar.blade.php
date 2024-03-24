@@ -11,7 +11,7 @@
         CRUD
     </div>
     <li class="nav-item">
-        <a class="nav-link collapsed" href="/employees" data-toggle="collapse" data-target="#collapseBootstrap" aria-expanded="true" aria-controls="collapseBootstrap">
+        <a class="nav-link collapsed" href="/employee" data-toggle="collapse" data-target="#collapseBootstrap" aria-expanded="true" aria-controls="collapseBootstrap">
             <i class="fa-solid fa-users me-2"></i>
             <span>Manage Employee</span>
         </a>

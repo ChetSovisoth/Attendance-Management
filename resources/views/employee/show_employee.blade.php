@@ -19,7 +19,7 @@
             <tr class="text-center">
                 <th scope="row">{{ $employee->id }}</th>
                 @if ($editting ?? false)
-                    <form action="{{ route('employee.update', $employee->id) }}" method="POST">
+                    <form action="{{ route('employees.update', $employee->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <td class="align-middle">
