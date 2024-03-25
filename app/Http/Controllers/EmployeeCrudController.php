@@ -62,7 +62,7 @@ class EmployeeCrudController extends Controller
         
         $employee->update([$validated, 'position_id' => $validated['position'], 'shift_id' => $validated['shift'], 'others' => request()->get('others')]);
     
-        return redirect()->route('employee.show', $employee->id)->with('success', 'Employee Updated');
+        return redirect()->route('employees.show', $employee->id)->with('success', 'Employee Updated');
     }
     
     public function reset(Employee $employee) {
@@ -70,7 +70,7 @@ class EmployeeCrudController extends Controller
             'password' => Hash::make('AttendIn2024@!')
         ]);
 
-        return redirect()->route('employee.show', $employee->id)->with('success', 'Employee Password Reset');
+        return redirect()->route('employees.show', $employee->id)->with('success', 'Employee Password Reset');
     }
 }
 
