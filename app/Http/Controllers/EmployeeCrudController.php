@@ -12,8 +12,8 @@ class EmployeeCrudController extends Controller
     public function store() {
         
         $validated = request()->validate([
-            'first_name' => 'required|min:2|max:25',
-            'last_name' => 'required|min:2|max:25',
+            'first_name' => 'required|max:25',
+            'last_name' => 'required|max:25',
             'phone' => 'required|numeric|digits_between:9,10',
             'shift' => 'required|exists:shifts,id',
             'position' => 'required|exists:positions,id'
@@ -52,8 +52,8 @@ class EmployeeCrudController extends Controller
 
     public function update(Employee $employee) {
         $validated = request()->validate([
-            'first_name' => 'required|min:2|max:25',
-            'last_name' => 'required|min:2|max:25',
+            'first_name' => 'required|max:25',
+            'last_name' => 'required|max:25',
             'phone' => 'required|numeric|digits_between:9,10',
             'email' => 'required|email',
             'shift' => 'required|exists:shifts,id',

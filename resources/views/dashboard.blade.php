@@ -18,6 +18,8 @@
                     </div>
 
                     <div class="row mb-3">
+
+
                         <!-- Employee Card -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <a href="/display/employees" type="button" class="w-100 text-decoration-none ">
@@ -27,7 +29,7 @@
                                             <div class="col me-2">
                                                 <div class="text-xs font-weight-bold text-uppercase mb-1">Employees</div>
                                                 <div class="fs-4 font-weight-bold ">
-                                                    {{ (new App\Models\Employee)->getTotalEmployee() }}
+                                                    {{ (new App\Models\Employee())->getTotalEmployee() }}
                                                 </div>
                                             </div>
                                             <div class="col-auto">
@@ -38,43 +40,47 @@
                                 </div>
                             </a>
                         </div>
+
                         <!-- Shift Card -->
-
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col me-2">
-                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Shifts</div>
-                                            <div class="fs-4 font-weight-bold ">
-                                                {{ (new App\Models\Shift)->getTotalShift() }}
+                            <a href="/display/shifts" type="button" class="w-100 text-decoration-none ">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col me-2">
+                                                <div class="text-xs font-weight-bold text-uppercase mb-1">Shifts</div>
+                                                <div class="fs-4 font-weight-bold ">
+                                                    {{ (new App\Models\Shift())->getTotalShift() }}
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fa-solid fa-business-time fa-2x text-warning"></i>
+                                            <div class="col-auto">
+                                                <i class="fa-solid fa-business-time fa-2x text-warning"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                        <!-- Position Card -->
 
+                        <!-- Position Card -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col me-2">
-                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Positions</div>
-                                            <div class="fs-4 font-weight-bold ">
-                                                {{ (new App\Models\Position)->getTotalPosition() }}
+                            <a href="/display/positions" type="button" class="w-100 text-decoration-none ">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col me-2">
+                                                <div class="text-xs font-weight-bold text-uppercase mb-1">Positions</div>
+                                                <div class="fs-4 font-weight-bold ">
+                                                    {{ (new App\Models\Position())->getTotalPosition() }}
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fa-solid fa-user-plus fa-2x text-info-emphasis"></i>
+                                            <div class="col-auto">
+                                                <i class="fa-solid fa-user-plus fa-2x text-info-emphasis"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
 
                         <!-- Emp Att Card  -->
@@ -84,9 +90,10 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col me-2">
-                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Employee Attendaces</div>
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Employee Attendaces
+                                            </div>
                                             <div class="fs-4 font-weight-bold ">
-                                                {{-- add data here --}} 
+                                                {{-- add data here --}}
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -106,7 +113,7 @@
                                         <div class="col me-2">
                                             <div class="text-xs font-weight-bold text-uppercase mb-1">Data Summary</div>
                                             <div class="fs-4 font-weight-bold ">
-                                                {{-- add data here --}} 
+                                                {{-- add data here --}}
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -126,7 +133,7 @@
                                         <div class="col me-2">
                                             <div class="text-xs font-weight-bold text-uppercase mb-1">Total Late</div>
                                             <div class="fs-4 font-weight-bold ">
-                                                {{-- add data here --}} 
+                                                {{-- add data here --}}
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -146,7 +153,7 @@
                                         <div class="col me-2">
                                             <div class="text-xs font-weight-bold text-uppercase mb-1">Total Absents</div>
                                             <div class="fs-4 font-weight-bold ">
-                                                {{-- add data here --}} 
+                                                {{-- add data here --}}
                                             </div>
                                         </div>
                                         <div class="col-auto">

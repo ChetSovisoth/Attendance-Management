@@ -4,10 +4,11 @@
     @include('position.create_position')
     <table class="table">
         <thead>
-            <tr>
-                <th scope="col" class="text-center">#</th>
-                <th scope="col" class="text-center">Title</th>
-                <th scope="col" class="text-center">Actions</th>
+            <tr class="text-center">
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Actions</th>
+            </tr>
         </thead>
         <tbody class="align-middle">
             @foreach ((new App\Models\Position())->paginate(10) as $position)

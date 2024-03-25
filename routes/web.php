@@ -53,6 +53,10 @@ Route::get("/shifts/{shift}", [ShiftController::class, 'show'])->name("shifts.sh
 
 Route::put("/shifts/{shift}", [ShiftController::class, 'update'])->name("shifts.update");
 
+Route::get("/display/shifts", function() {
+    return view('shift.display_shift');
+});
+
 //Position's route
 Route::get('/positions', function() {
     return view('position.crud_position');
@@ -68,6 +72,9 @@ Route::get("/positions/{position}", [PositionController::class, 'show'])->name("
 
 Route::put("/positions/{position}", [PositionController::class, 'update'])->name("positions.update");
 
+Route::get("/display/positions", function() {
+    return view('position.display_position');
+});
 
 //Dashboard
 Route::get('/', function() {
